@@ -1,0 +1,176 @@
+/* Write your CSS code here */
+:root {
+    --light-yellow: #ffffc5;
+    --light-yellow-var2: #bdbd9f;
+    --dark-gray: #2f2f38;
+    --white: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.view-border {
+    border: 1px red solid;
+}
+
+body {
+    background-color: rgb(234, 247, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+.profile-container {
+    background-color: var(--dark-gray);
+    width: 800px;
+    min-width: 700px;
+    height: 350px;
+    display: flex;
+    border-radius: 30px;
+}
+
+.about-container {
+    padding: 40px;
+    width: 40%;
+    position: relative;
+}
+
+.img-wrapper {
+    border: 2px solid var(--white);
+    box-shadow: 0 0 20px -5px var(--light-yellow);
+    aspect-ratio: 1;
+    border-radius: 40%;
+    object-fit: cover;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.profile {
+    object-fit: cover;
+    width: 100%;
+}
+
+.text-container {
+    margin-top: 15px;
+    color: var(--light-yellow)
+}
+
+.text-container #domain-text {
+    color: var(--light-yellow-var2);
+}
+
+.text-container #desc-text {
+    margin-top: 10px;
+}
+
+.link-container {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+.link-container .link {
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.link svg {
+    fill: var(--white);
+}
+
+.link-container .link:hover {
+    background-color: var(--light-yellow);
+    box-shadow: 0 0 20px -5px var(--white);
+}
+
+.link-container .link:hover svg {
+    fill: var(--dark-gray);
+}
+
+.extra-container {
+    padding-right: 40px;
+    padding-bottom: 40px;
+    width: 60%;
+    position: relative;
+}
+
+.org-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--white)
+}
+
+.org-container svg {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    fill: var(--white);
+}
+
+.bar-wrapper {
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid var(--white);
+    height: 10px;
+    box-shadow: 0 0 30px -5px var(--white);
+    overflow: hidden;
+}
+
+.bar-wrapper .progress {
+    border-radius: inherit;
+    width: 60%;
+    height: inherit;
+    background-color: var(--light-yellow);
+}
+
+.follow-container {
+    width: calc(100% - 40px);
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.follow-container .follower {
+    font-size: 20px;
+    color: var(--white);
+}
+
+.follow-container .follower b {
+    color: var(--light-yellow);
+}
+
+.follow-container .btn-follow {
+    margin-top: 10px;
+    padding: 5px 20px;
+    font-size: 20px;
+    border: 2px solid var(--white);
+    background-color: var(--dark-gray);
+    border-radius: 20px;
+    color: var(--light-yellow);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.follow-container .btn-follow:hover {
+    background-color: var(--light-yellow);
+    color: var(--dark-gray);
+    box-shadow: 0 0 20px -5px var(--white);
+    border-color: transparent;
+}
