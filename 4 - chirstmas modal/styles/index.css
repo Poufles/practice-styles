@@ -1,0 +1,166 @@
+/* Write your CSS code here */
+:root {
+    --white: #FFF;
+    --black: #000;
+    --gray: #4F4F4F;
+    --red: #FF6969;
+    --green: #70A275;
+}
+
+.view-border {
+    border: 1px violet solid;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-image: linear-gradient(120deg, #EEEEEE, #D2DFFF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+svg {
+    fill: var(--white);
+    width: 30px;
+    height: 30px;
+}
+
+.modal-container {
+    position: relative;
+    width: 400px;
+    min-width: 300px;
+    height: 500px;
+    border-top-right-radius: 20px;
+    background-image: linear-gradient(120deg, var(--green) 30%, var(--red));
+    box-shadow: 0 0 20px -5px var(--gray);
+    border: 2px solid var(--white);
+}
+
+.exit-wrapper {
+    position: relative;
+}
+
+.exit-wrapper .btn-exit {
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn-exit:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.icon-wrapper {
+    margin: 90px 0 10px;
+    text-align: center;
+}
+
+.icon-wrapper svg {
+    width: 55px !important;
+    height: 55px !important;
+}
+
+.text-container {
+    text-align: center;
+    padding: 5px 60px;
+}
+
+.text-container h3, .text-container p {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.text-container p {
+    line-height: 160%;
+}
+
+.text-container p {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.text-container h4 .discount {
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.text-container h4 .subscription {
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.confirm-container {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 0 15px;
+    background-color: var(--green);
+    border-radius: 10px;
+    border: 2px solid var(--white);
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.5s;
+    transition-delay: 100ms;
+}
+
+.confirm-container p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--white);
+    transition: 0.5s;
+    height: 40px;
+}
+
+.confirm-container figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -40px;
+    transition: 0.5s;
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    background-color: var(--red);
+}
+
+.confirm-container:hover {
+    box-shadow: 0 0 20px -5px var(--white);
+}
+
+.confirm-container:hover p {
+    transform: translateY(-200%);
+}
+
+.confirm-container:hover figure {
+    bottom: 50%;
+    transform: translateY(50%);
+}
