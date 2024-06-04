@@ -1,0 +1,230 @@
+/* Write your CSS code here */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+    --white: #FFF;
+    --black: #000;
+    --grey: #EBEBEB;
+    --violet: #713E82;
+    --dark-violet: #400E58;
+    --transparent-white: #FFFFFFc4;
+}
+
+.view-border {
+    border: 1px red solid;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Inria Sans", sans-serif;
+    color: var(--white);
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--white);
+}
+
+img {
+    width: 90px;
+}
+
+.login-wrapper {
+    background-image: linear-gradient(120deg, var(--violet), var(--dark-violet));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.logo-container figure>img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.login-container {
+    background-color: #00000099;
+    box-shadow: 0 0 20px -5px var(--white);
+    padding: 50px 40px;
+    border-radius: 20px;
+    min-width: 320px;
+    width: 450px;
+    cursor: default;
+}
+
+.login-container>h2 {
+    margin-bottom: 20px;
+}
+
+.account-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.account-container figure {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.account-container figure>img {
+    width: 170px;
+    transform: translate(-50px, -20px);
+}
+
+.account-texts h4 {
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+.password-container h5 {
+    margin-bottom: 5px;
+}
+
+.password {
+    border: 2px solid var(--violet);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: 0.3s;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.password input[type="password"] {
+    background-color: transparent;
+    border: none;
+    width: calc(100% - 80px);
+    font-size: 15px;
+    margin: 0 15px 0 10px;
+    outline: none;
+}
+
+.password:hover {
+    box-shadow: 0 0 10px -5px var(--white);
+}
+
+.password:has(input[type="password"]:focus) {
+    box-shadow: 0 0 15px -5px var(--white);
+}
+
+.password button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.password button > svg {
+    width: 23px;
+}
+
+.password button {
+    position: absolute;
+    right: 15px;
+}
+
+.sign-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.signed-preference {
+    display: flex;
+    align-items: center;
+}
+
+.signed-preference .preference {
+    width: 60px;
+    padding: 5px;
+    border-radius: 20px;
+    margin-right: 7px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.preference:hover {
+    box-shadow: 0 0 15px -5px var(--white);
+}
+
+.preference .preference-ball {
+    width: 20px;
+    height: 20px;
+    background-color: var(--dark-violet);
+    border-radius: 50%;
+}
+
+.sign-container .continue {
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 15px;
+    background-color: var(--dark-violet);
+    border: 2px solid var(--white);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sign-container .continue:hover {
+    box-shadow: 0 0 20px -5px var(--white);
+}
+
+.sign-container .continue:active {
+    background-color: var(--black);
+    color: var(--white);
+    border: 2px solid var(--dark-violet)
+}
+
+.forgot {
+    opacity: 0.9;
+    font-size: 13px;
+}
+
+.forgot:active {
+    color: var(--violet)
+}
+
+@media screen and (max-width: 560px) {
+    .login-container {
+        width: 320px;
+    }
+
+    .login-container h2{
+        text-align: center;
+    }
+
+    .forgot {
+        display: block;
+        text-align: center;
+    }
+
+    .account-container {
+        justify-content: center;
+    }
+
+    .sign-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
