@@ -108,7 +108,7 @@ img {
     margin-bottom: 30px;
 }
 
-.password input[type="password"] {
+.password input[type="password"], .password input[type="text"] {
     background-color: transparent;
     border: none;
     width: calc(100% - 80px);
@@ -171,6 +171,21 @@ img {
     height: 20px;
     background-color: var(--dark-violet);
     border-radius: 50%;
+    transition: 0.4s;
+}
+
+.preference-yes {
+    transform: translateX(150%);
+    background-color: var(--white) !important;
+}
+
+.preference:has(.preference-ball.preference-yes) {
+    box-shadow: 0 0 13px -5px var(--white);
+    background-color: var(--dark-violet);
+}
+
+.preference-no {
+    transform: translateX(0%);
 }
 
 .sign-container .continue {
@@ -193,6 +208,10 @@ img {
     background-color: var(--black);
     color: var(--white);
     border: 2px solid var(--dark-violet)
+}
+
+.hidden {
+    display: none;
 }
 
 .forgot {
