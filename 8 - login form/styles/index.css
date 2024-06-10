@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --font-size: 20px;
+    --light-gray: #7d7d7d;
+    --gray: #5a5a5a;
+    --dark-gray: #2b2b2b;
+}
+
+.view-border {
+    border: 1px red solid;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    font-size: var(--font-size);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #69beef;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 900px;
+    height: 600px;
+    display: flex;
+    background-color: #FFF;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 30px;
+}
+
+.left-login {
+    width: 65%;
+    box-shadow: 5px 0 15px -5px #000;
+    z-index: 2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-login h1 {
+    font-size: 1.6rem;
+}
+
+.left-login p {
+    font-size: 0.8rem;
+    margin: 5px 0;
+}
+
+.left-login .login-container {
+    padding-bottom: 20px;
+    border-bottom: 2px solid;
+}
+
+.left-login .login-container form {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.left-login .login-container form .login-email {
+    width: 100%;
+}
+
+.left-login .login-container form .login-email input[type="email"] {
+    width: 100%;
+    padding: 20px 10px;
+    border-radius: 5px;
+    margin: 40px 0;
+    font-size: 0.9rem;
+}
+
+.left-login .login-container form .login-email .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-login .login-container form .login-email .button-container a {
+    font-size: 0.8rem;
+    color: var(--light-gray);
+    transition: 0.5s
+}
+
+.left-login .login-container form .login-email .button-container a:hover {
+    color: var(--gray);
+}
+
+.left-login .login-container form .login-email .button-container a:active {
+    color: var(--dark-gray)
+}
+
+.left-login .login-container form .login-email .button-container button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px;
+    background-color: transparent;
+    border: none;
+    font-size: 0.9rem;
+    transition: 0.5s all;
+}
+
+.left-login .login-container form .login-email .button-container button svg {
+    width: 24px;
+    height: 24px;
+}
+
+.left-login .login-container form .login-email .button-container button:hover {
+    transform: translatex(5px);
+}
+
+.left-login .alt-login-container {
+    text-align: center;
+    margin-top: 50px;
+    color: var(--light-gray);
+}
+
+.left-login .alt-login-container .button-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-login .alt-login-container .button-container button {
+    background-color: transparent;
+    border: none;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.7rem;
+    transition: 0.5s;
+}
+
+.left-login .alt-login-container .button-container button:hover {
+    transform: translateY(-5px);
+}
+
+.left-login .alt-login-container button svg {
+    width: 30px;
+    height: 30px;
+}
+
+.left-login .alt-login-container p:last-of-type {
+    font-size: 0.7rem;
+}
+
+.right-login {
+    width: 35%;
+    position: relative;
+    height: inherit;
+}
+
+.right-login picture {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+
+.right-login picture img {
+    width: inherit;
+    height: inherit;
+}
+
+.exit-login {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1;
+    border: none;
+    background-color: rgb(255, 255, 255, 0.7);
+    font-weight: bold;
+    transition: 0.5s;
+    z-index: 3;
+}
+
+.exit-login:hover {
+    background-color: black;
+    color: white
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        width: 600px
+    }
+
+    .left-login {
+        width: 60%;
+    }
+
+    .right-login {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        width: 500px;
+        min-width: 300px;
+    }
+
+    .left-login {
+        width: 100%;
+    }
+
+    .right-login {
+        width: 0%;
+        display: hidden;
+    }
+}
