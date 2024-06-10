@@ -79,3 +79,15 @@ body {
         transform: translateX(calc(var(--width) * -1));
     }
 }
+
+@media screen and (max-width: 767px) {
+    @keyframes autoslide {
+        from {
+            transform: translateX(500px);
+        }
+
+        to {
+            transform: translateX(calc(var(--width) * -1));
+        }
+    }
+}
