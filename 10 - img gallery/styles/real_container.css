@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.real-container {
+    display: flex;
+}
+
+.real-container .banner {
+    font-family: "Fira Sans", sans-serif;
+    width: 500px;
+    height: 100vh;
+    background-image: url(https://images.pexels.com/photos/339379/pexels-photo-339379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 3px 0 16px -5px #000;
+    position: sticky;
+    top: 0;
+    transition: 0.5s;
+}
+
+.real-container .banner .overlay {
+    background-color: rgba(42, 42, 42, 0.3);
+    backdrop-filter: blur(12px);
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.real-container .banner .overlay h1 {
+    margin-top: 60px;
+    color: #FFF;
+}
+
+.real-container .banner .overlay .sub-title {
+    margin: 10px 0 30px;
+    color: #FFF;
+    font-size: 0.8rem;
+}
+
+.real-container .banner .overlay footer {
+    color: #FFF;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.real-container .banner .overlay footer a {
+    color: green;
+}
+
+.real-container .banner .overlay .search-container {
+    border: 2px solid #FFF;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255, 0.1);
+}
+
+.real-container .banner .overlay .search-container input[type="text"] {
+    background-color: transparent;
+    font-size: 1.2rem;
+    padding: 10px 5px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    width: 80%;
+}
+
+.real-container .banner .overlay .search-container input[type="text"]::placeholder {
+    color: #dadada;
+}
+
+.real-container .banner .overlay .search-container input[type="text"]:focus::placeholder {
+    display: none;
+}
+
+.real-container .banner .overlay .search-container .search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.real-container .banner .overlay .search-container .search-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #FFF;
+}
+
+main {
+    padding: 60px;
+    width: 100%;
+    background-color: #FFF8ED;
+    transition: 0.5s;
+}
+
+.dark-main {
+    background-color: #0f0f14;
+}
+
+main .gallery-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+main .gallery-container div {
+    width: calc(33.33% - 20px);
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+main .gallery-container div a {
+    transition: 0.5s;
+}
+
+main .gallery-container div a:hover {
+    transform: scale(1.025);
+}
+
+main .gallery-container div a:hover img {
+    box-shadow: 0 0 15px -7px #1a1a1a;
+}
+
+main .gallery-container div a img {
+    width: 100%;
+    box-shadow: 0 0 15px -4px #000;
+    transition: 0.5s;
+}
+
+main .more-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dark-mode-container {
+    position: fixed;
+    width: 70px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 20px;
+    right: 60px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    border: 2px solid #FFF;
+    cursor: pointer;
+    box-shadow: 0 0 15px -5px #000;
+    transition: 0.3s;
+}
+
+.dark-mode-circle {
+    transform: translateX(25px);
+    background-color: #000 !important;
+    box-shadow: 0 0 15px #FFFB81 !important;
+}
+
+.dark-mode-button {
+    border: 2px solid #000;
+    box-shadow: 0 0 15px -5px #FFF;
+    background-color: #FFF;
+}
+
+.dark-mode-container div {
+    transition: 0.3s;
+    height: 20px;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #fffb81;
+    box-shadow: 0 0 15px #FFF;
+}
+
+.dark-banner {
+    box-shadow: 3px 0 16px -5px #FFF !important;
+}
+
+.dark-image {
+    box-shadow: 0 0 15px -4px #FFF !important;
+}
