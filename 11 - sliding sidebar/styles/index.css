@@ -8,16 +8,27 @@
 
 body {
     background-color: #f6f6f6;
+    position: relative;
+}
+
+.overlay {
+    display: none;
+    backdrop-filter: blur(17px);
+    position: absolute;
+    background-color: #0000001a;
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
 }
 
 .sidebar-container {
-    position: relative;
     position: fixed;
     height: 100vh;
     display: flex;
     background-color: #FFF;
     transition: 0.4s;
-    width: 300px;
+    z-index: 5;
+    width: 0;
 }
 
 .sidebar-container .sidebar {
@@ -48,4 +59,8 @@ body {
 
 .sidebar-container .sidebar-button p {
     letter-spacing: 3px;
+}
+
+main {
+    
 }
