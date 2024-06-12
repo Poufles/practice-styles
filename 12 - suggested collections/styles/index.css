@@ -1,0 +1,189 @@
+/* Write your CSS code here */
+@import url('https://fonts.cdnfonts.com/css/futura-lt');
+
+:root {
+    --background: ;
+    --primary: #000;
+    --secondary: #FFF;
+    --accent1: ;
+    --font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+svg {
+    width: 23px;
+    height: 23px;
+}
+
+img {
+    width: 100px;
+    height: 80px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Futura LT', sans-serif;
+    background-color: #ececec;
+    height: 100vh;
+}
+
+.container {
+    margin: 0 20px;
+    width: 1200px;
+    padding: 30px;
+    border-radius: 20px;
+    background-image: radial-gradient(#d6d6d6, var(--secondary));
+    box-shadow: 0 0 15px -5px #000;
+}
+
+.container .heading {
+    font-size: 2rem;
+}
+
+.container .tags-container {
+    margin-top: 15px;
+    display: flex;
+    gap: 7px;
+}
+
+.container .tags-container .tag {
+    padding: 7px;
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    box-shadow: 0 0 15px -5px #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.container .tags-container .tag:hover {
+    transform: scale(1.07);
+}
+
+.container .collections-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .collections-container a {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--primary);
+    background-color: var(--secondary);
+    padding: 15px;
+    box-shadow: 0 0 15px -5px #000;
+    transition: 0.5s;
+}
+
+.container .collections-container a:hover {
+    transform: translateY(5px)
+}
+
+.container .collections-container .collection .images-container {
+    width: 100%;
+    height: 300px;
+}
+
+.container .collections-container .collection .images-container .main-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.container .collections-container .collection .images-container .sub-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.container .collections-container .collection .images-container .sub-images .sub-image {
+    width: 32%;
+}
+
+.container .collections-container .collection .images-container .sub-images .sub-image img {
+    border-radius: 20px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.container .collections-container .collection .text-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.container .collections-container .collection .text-container .type {
+    font-size: 1.5rem;
+}
+
+.container .collections-container .collection .text-container .image-count-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+@media screen and (max-width: 999px) {
+    .container .collections-container .collection .images-container {
+        height: 200px;
+    }
+    
+    .container .collections-container .collection .images-container .main-image img {
+        height: 200px;
+    }
+
+    .container .collections-container .collection .images-container .sub-images {
+        display: none;
+    }
+
+    .container .collections-container .collection .text-container {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 763px) {
+    body {
+        height: auto;
+    }
+
+    .container {
+        margin: 20px 20px;
+    }
+
+    .container .tags-container {
+        flex-wrap: wrap;
+    }
+
+    .container .collections-container {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .container .collections-container a {
+        width: auto;
+    }
+
+    .container .collections-container .collection .images-container {
+        height: auto;
+    }
+
+    .container .collections-container a .collection .images-container .sub-images {
+        display: flex;
+    }
+}
