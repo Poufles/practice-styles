@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/futura-std-4');
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Futura Std', sans-serif;
 }
 
 body {
@@ -11,9 +12,9 @@ body {
     position: relative;
 }
 
-.overlay {
+.container .overlay {
     display: none;
-    backdrop-filter: blur(17px);
+    backdrop-filter: blur(7px);
     position: absolute;
     background-color: #0000001a;
     height: 100vh;
@@ -24,7 +25,6 @@ body {
 .sidebar-container {
     position: fixed;
     height: 100vh;
-    display: flex;
     background-color: #FFF;
     transition: 0.4s;
     z-index: 5;
@@ -33,34 +33,365 @@ body {
 
 .sidebar-container .sidebar {
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-shrink: 0;
     width: inherit;
+    padding: 30px 20px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-container .sidebar>* {
+    overflow: hidden;
+}
+
+.sidebar-container .sidebar .logo-container {
+    text-align: center;
+    border-bottom: 4px solid black;
+    padding-bottom: 7px;
+    margin-bottom: 30px;
+}
+
+.sidebar-container .sidebar .logo-container a {
     font-size: 60px;
+    text-decoration: none;
+    color: #000;
+}
+
+.sidebar-container .sidebar .sub-title {
+    text-align: justify;
+    margin-bottom: 50px;
+    font-size: 0.9rem;
+}
+
+.sidebar-container .sidebar .nav-items li {
+    list-style: none;
+    transition: 0.4s;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.sidebar-container .sidebar .nav-items li:hover {
+    background-image: linear-gradient(90deg, red 0%, transparent 71%);
+
+    a {
+        color: #FFF;
+    }
+
+    a svg {
+        fill: #FFF;
+        stroke: #FFF;
+    }
+}
+
+.sidebar-container .sidebar .nav-items li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #000
+}
+
+.sidebar-container .sidebar .nav-items li a svg {
+    width: 25px;
+    height: 25px;
+}
+
+.sidebar-container .sidebar .nav-items li:not(:first-of-type) a svg {
+    width: 25px;
+    height: 20px;
+}
+
+.sidebar-container .sidebar .bottom-container {
+    bottom: 0;
+    border-top: 4px solid #000;
+    padding-top: 10px;
+}
+
+.sidebar-container .sidebar .bottom-container p {
+    font-size: 0.8rem;
+    text-align: center;
 }
 
 .sidebar-container .sidebar-button {
     position: absolute;
     top: 50%;
     transform: rotate(-90deg) translateY(-50%);
-    left: calc(101%);
+    left: calc(98%);
 }
 
 .sidebar-container .sidebar-button button {
-    padding: 15px;
+    padding: 15px 30px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border: none;
     background-color: #FFF;
     cursor: pointer;
-}
-
-.sidebar-container .sidebar-button p {
     letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 1.25rem;
 }
 
 main {
-    
+    margin: 0 75px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+main .search-container {
+    grid-column: 2 / 11;
+    display: flex;
+    align-items: center;
+    border: 2px solid #000;
+    margin: 30px 30px 30px 0;
+    border-radius: 40px;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+}
+
+main .search-container input[type="text"] {
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+}
+
+main .search-container input[type="text"]:focus {
+    outline: none;
+}
+
+main .search-container input[type="text"]:focus::placeholder {
+    color: transparent;
+}
+
+main .search-container button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+main .search-container svg {
+    width: 25px;
+    height: 25px;
+}
+
+main .logo-container {
+    grid-column: 11 / 12;
+    margin: 30px 0 30px 30px;
+    padding: 10px;
+}
+
+main .logo-container a {
+    text-decoration: none;
+    color: #000;
+    font-size: 2.5rem;
+}
+
+main .banner-container {
+    grid-column: 1 / 13;
+    border: 2px solid #000;
+    height: 700px;
+    margin: 0 30px 0;
+    border-radius: 30px;
+    background-image: url(https://images.pexels.com/photos/1313817/pexels-photo-1313817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px -5px #000;
+}
+
+main .banner-container .banner-overlay {
+    width: inherit;
+    height: inherit;
+    background-image: linear-gradient(120deg, transparent, rgb(0, 0, 0, 0.4) 80%);
+    backdrop-filter: blur(5px);
+}
+
+main .banner-container .heading {
+    color: #FFF;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    max-width: 900px;
+    font-size: 5rem;
+}
+
+main .banner-container .social-links {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+main .banner-container .social-links .social {
+    list-style: none;
+}
+
+main .banner-container .social-links .social svg {
+    height: 40px;
+    width: 40px;
+    fill: #FFF;
+    transition: 0.5s;
+}
+
+main .banner-container .social-links .social svg:hover {
+    transform: scale(1.05);
+}
+
+main .banner-container .collection {
+    width: 500px;
+    height: 40%;
+    position: absolute;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #2828289e;
+    backdrop-filter: blur(3px);
+    transition: 0.5s;
+}
+
+main .banner-container .collection:hover {
+    transform: scale(1.02);
+}
+
+main .banner-container #collection1 {
+    right: 50px;
+    top: 50px
+}
+
+main .banner-container #collection2 {
+    right: 50px;
+    bottom: 50px;
+}
+
+main .banner-container .collection figure {
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+main .banner-container .collection figure .count-container {
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px
+}
+
+main .banner-container .collection figure .count-container #photo-count {
+    font-size: 1rem;
+    color: #FFF;
+}
+
+main .banner-container .collection figure .count-container svg {
+    fill: #FFF;
+    stroke: #FFF;
+    width: 20px;
+    height: 20px;
+}
+
+main .banner-container .collection figure img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+main .banner-container .collection figure .text {
+    position: absolute;
+    left: 13px;
+    bottom: 13px;
+    border-radius: 10px;
+    max-width: 225px;
+    max-height: 125px;
+    text-align: justify;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 7px
+}
+
+main .banner-container .collection figure .text .title {
+    font-size: 2rem;
+    color: #FFF;
+}
+
+main .banner-container .collection figure .text .sub-title {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+main .banner-container .collection figure button[type="button"] {
+    position: absolute;
+    bottom: 13px;
+    right: 13px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    border: none;
+    background-color: #FFF;
+    color: #000;
+    cursor: pointer;
+    box-shadow: 0 0 15px -5px #FFF;
+    transition: 0.5s;
+}
+
+main .banner-container .collection figure button[type="button"]:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 1685px) {
+    main .banner-container .heading {
+        max-width: 600px;
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 1426px) {
+    main .banner-container .heading {
+        max-width: 400px;
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 1216px) {
+    main .banner-container .heading {
+        max-width: 400px;
+        font-size: 3.5rem;
+    }
+
+    main .banner-container .collection {
+        width: 355px;
+    }
+
+    main .banner-container .collection figure .text .sub-title {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1089px) {
+    main .banner-container #collection1 {
+        left: 50px;
+        bottom: 50px;
+        top: auto;
+    }
+
+    main .banner-container #collection2 {
+        right: 50px;
+        bottom: 50px;
+    }
+
+    main .banner-container .social-links {
+        top: 50px;
+        bottom: auto;
+        left: auto;
+        right: 50px;
+    }
 }
