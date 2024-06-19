@@ -1,0 +1,63 @@
+@import url('https://fonts.cdnfonts.com/css/gasoek-one');
+
+:root {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  height: 100vh;
+  min-height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: 'Gasoek One', sans-serif;
+}
+
+.container {
+  font-size: 250px;
+  line-height: 100%;
+  word-spacing: 0%;
+}
+
+.text-container {
+  background-image: url(../src/on_cam.jpg);
+  background-position: center;
+  background-size: cover;
+  background-clip: text;
+  text-align: left;
+  -webkit-background-clip: text;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.word-container {
+  display: flex;
+  justify-content: center;
+}
+
+span {
+  -webkit-text-stroke: black 2px;
+  animation: snap linear infinite 1s;
+  animation-delay: calc(0.25s * var(--letter));
+}
+
+@keyframes snap {
+  0%, 10%, 12%, 22%, 24%, 34% {
+    color: transparent;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    font-size: 260px;
+  }
+  11%, 23%, 35% {
+    color: white;
+    font-size: 250px;
+  }
+}
