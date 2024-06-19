@@ -1,0 +1,115 @@
+@import url('https://fonts.cdnfonts.com/css/lunasima');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lunasima', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.title-quote-container {
+    text-align: center;
+}
+
+h1 {
+    text-transform: lowercase;
+    font-size: 40px;
+    color: #FFFAF1
+}
+
+.quote {
+    font-size: 1.4rem;
+    color: #FFFAF1
+}
+
+.quote::before {
+    content: "\""
+}
+
+.quote::after {
+    content: "\""
+}
+
+.container {
+    width: 1400px;
+    padding: 30px 50px;
+    border-radius: 200px;
+    background-color: #333333;
+    box-shadow: 0 0 15px -5px #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon > svg {
+    width: 100px;
+    height: 100px;
+    fill: #FFFAF1
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    white-space: pre;
+    width: max-content;
+}
+
+.text span {
+    position: relative;
+    color: transparent;
+    font-size: 100px;
+    animation: display 36s linear infinite;
+    animation-delay: calc(-6s * var(--order));
+}
+
+.text span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    border-right: 4px solid #276cd4;
+    color: #FFFAF1;
+    animation: typing_effect 6s linear infinite;
+}
+
+@keyframes display {
+    0% {
+        display: inline-block;
+    }
+    16.67%, 100% {
+        display: none;
+    }
+}
+
+@keyframes typing_effect {
+    0%, 80%, 100% {
+        width: 0;
+        border-right: 4px solid #276cd4;
+    }
+    
+    16.67%, 63.33% {
+        width: 100%;
+        border-right: 4px solid #276cd4;
+    }
+
+    20%, 29%, 40%, 49%, 60%, 80%, 89%, 100% {
+        border-right: 4px solid #276cd4;
+    }
+
+    30%, 39%, 50%, 59%, 90%, 99%  {
+        border-right: 4px solid transparent;
+    }
+}
